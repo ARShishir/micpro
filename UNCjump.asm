@@ -1,0 +1,22 @@
+          .MODEL SMALL
+.DATA
+.STACK 100H
+.CODE
+MAIN PROC
+    MOV AX,3
+    MOV BX,5
+    CMP AX,BX
+    
+    JG LABEL1
+    MOV CX,BX
+    
+    JMP RETURN 
+    
+    LABEL1:
+    MOV CX,AX 
+    
+    RETURN:
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END MAIN
